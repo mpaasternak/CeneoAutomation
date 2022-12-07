@@ -1,6 +1,6 @@
 package pl.ceneo.tests.homePage;
 
-import org.openqa.selenium.By;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pl.ceneo.pages.homePage.HomePage;
 import pl.ceneo.tests.utils.BaseTest;
@@ -17,11 +17,14 @@ public class HomePageTests extends BaseTest {
     }
 
     @Test
-    public void checkPageTitleTest(){
-        //homePage.clickOnMainPageIconButton();
-        driver.findElement(By.className("header__logo__link")).click();
+    public void checkPageTitleTest() {
+        //act
+        homePage.clickOnMainPageIconButton();
 
+        //get
         String pageTitle = homePage.getMainPageTitle(driver);
+
+        //verify
         assertThat(pageTitle).isEqualTo(HOME_PAGE_TITLE);
     }
 }
