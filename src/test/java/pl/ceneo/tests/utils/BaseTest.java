@@ -3,6 +3,7 @@ package pl.ceneo.tests.utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
@@ -29,7 +30,7 @@ public class BaseTest {
         driver.get(BASE_URL);
     }
 
-    @AfterMethod
+    @AfterSuite
     public void tearDown() {
         if (driver != null) {
             driver.quit();

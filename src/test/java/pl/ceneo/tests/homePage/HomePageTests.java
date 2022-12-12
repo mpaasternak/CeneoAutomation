@@ -9,11 +9,11 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static pl.ceneo.pages.homePage.HomePageTitles.HOME_PAGE_TITLE;
 
 public class HomePageTests extends BaseTest {
-    HomePage homePage = new HomePage(driver);
+    HomePage homePage;
 
-    @Test
-    public void mockTest() {
-        System.out.println("Mock");
+    @BeforeMethod
+    public void setUpBefore(){
+        homePage = new HomePage(driver);
     }
 
     @Test
